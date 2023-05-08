@@ -26,6 +26,13 @@ def print(students)
   students.each_with_index do |student, index| 
     puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)"
   end 
+  puts "List the names of students beginning with this letter:"
+  first_letter = gets.chomp
+    students.each_with_index do |student, index|
+      if student[:name][0] == first_letter
+        puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)"
+      end 
+    end 
 end 
 
 def print_footer(students)
