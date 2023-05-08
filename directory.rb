@@ -26,10 +26,9 @@ def print(students)
   students.each_with_index do |student, index| 
     puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)"
   end 
-  puts "List the names of students beginning with this letter:"
-  first_letter = gets.chomp
-    students.each_with_index do |student, index|
-      if student[:name][0] == first_letter
+  puts "Here is a list of names less than 12 characters:"
+  students.each_with_index do |student, index| 
+      if student[:name].length < 12  
         puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)"
       end 
     end 
